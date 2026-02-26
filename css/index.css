@@ -1,0 +1,25 @@
+body{
+  text-align: center;
+    background-color: black;
+    font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  
+  
+  
+}
+
+a{
+  
+  text-align: center;
+  color: #2972B6;
+}
+p strong{
+  font-size: xxx-large;
+}
+p{
+ font-weight: 600;
+ font-size: x-large;
+color: azure;
+}
