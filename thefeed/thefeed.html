@@ -13,15 +13,23 @@ rel="stylesheet">
     
     
     <link rel="stylesheet" href="css/thefeed.css">
+    <script src="js/thefeed.js" defer></script>
     </head>
 
     <body>
 
    <nav>
-    <a href="/index.html"><h1>Go Back</h1></a>
+    <a href="/index.html" id="back-button" class="wii-button"> <h1>Go Home</h1></a>
  </nav>
     
     <div class="flexbox">
+
+         <div class="tile">  
+ <div class="Syd">
+ <img src="img /IMG_0200.jpg" alt="picture of me in a pink crop top with a black shawl and glasses on"/>
+ <h5> Yo, my name is Syd (or Sydni) and I'm a 2nd year design major from south central LA ! Welcome to my feed, take a look around, I hope it feels you with as much nostalgia as it does me while you take a look into my daily/weekly life. Let's play 2 truths and a lie. I have 5 pets, my dad was a major league baseball player, and my sister met ice cube at the mall. Let's see if you can guess which one is the lie ;] </h5>
+  </div>
+  </div>
         <div class="tile">
    <img src="img /flower-jeans.jpg" alt="a german shopping website that has traditional asian imagery mixed with modern street wear, a paie of black baggy jeans with pink cherry blossoms and koi fish is in the middle"/>" 
    <h5>I have been OBSESSING over these pants forever. <br>They’re so expensive, but I feel like they’re so worth it, they’re absolutely gorgeous.</h5> 
@@ -83,28 +91,60 @@ rel="stylesheet">
  <video controls width="600">
   <source src="img /insta.mp4" type="video/mp4">
   </video>
- <h5>My Instagram feed is so me: F1, alt music, Sanrio, etc. I spent years curating it, and you can tell a lot about me just from looking at it.</h5>
-
-  </div>
+ <h5>My Instagram feed is so me: F1, alt music, Sanrio, etc. I spent years curating it, and you can tell a lot about me just from looking at it.</h5> </div>
 
 
-<html>
 
+<audio id="myAudio" src="img /wiimusic.mp3" preload="auto" loop></audio>
 
-<body>
+<div class="tile sound-tile" id="playSound">
+    <h5 id="soundLabel">Play Sound</h5>
+</div>
+</div>
+
 <div class="wii-header">
     Wii Menu
 </div>
+<div class="menu-wrapper"></div>
 
 <div class="wii-bar">
+    <div class="nav-arrow"></div>
     <div class="page-dots">
         <span class="dot active"></span>
         <span class="dot"></span>
     </div>
     <div id="clock"></div>
+    <div class="wii-clock"></div>
+    
     </div>
-</body>
 
-</body>
-                   
+    <script>
+function updateClock() {
+  const now = new Date();
+  const time = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  document.getElementById("clock").textContent = time;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+<script>
+const cursors = [
+  "img/wii-cursor-1.png" ,
+   "img/wii-cursor-2.png" ,
+];
+
+let frame = 0;
+
+setInterval(() => {
+  document.body.style.cursor = `url(${cursors[frame]}) 0 0, auto`;
+  frame = (frame + 1) % cursors.length;
+}, 150);
+</script>
+
+<audio id="back-sound" src="img /nintento-wii.mp3" preload="auto"></audio>
+
+
+<audio id="clicksound" src="img /nintento-wii.mp3"></audio>
+</body>          
 </html>
